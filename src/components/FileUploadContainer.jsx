@@ -25,7 +25,7 @@ function FileUploadContainer() {
     formData.append("file", file);
 
     setUploadLoading(true); // Show the loading icon for the Upload button
-    const response = await axios.post("http://127.0.0.1:8000/api/upload/", formData, {
+    const response = await axios.post("https://ai-document-query-backend-2.onrender.com/api/upload/", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
 
@@ -35,7 +35,7 @@ function FileUploadContainer() {
 
   const handleQuestion = async () => {
     setAskLoading(true); // Show the loading icon for the Ask button
-    const response = await axios.post("http://127.0.0.1:8000/api/qa/", {
+    const response = await axios.post("https://ai-document-query-backend-2.onrender.com/api/qa/", {
       content: content,
       question: question,
     });
